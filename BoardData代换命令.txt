@@ -1,0 +1,25 @@
+tftp -g -l /tmp/A2_calData_20170804_edit.bin -r A2_calData_20170804_edit.bin 192.168.1.222
+dd if=/dev/mtd5 of=/tmp/art.bin
+dd if=/tmp/art.bin                        of=/tmp/new_art.bin bs=32 count=640   seek=0      skip=0
+dd if=/tmp/A2_calData_20170804_edit.bin   of=/tmp/new_art.bin bs=32 count=377   seek=640    skip=0
+dd if=/tmp/art.bin                        of=/tmp/new_art.bin bs=32 count=1031  seek=1017   skip=1017
+mtd write /tmp/new_art.bin art
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

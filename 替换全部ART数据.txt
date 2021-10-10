@@ -1,0 +1,99 @@
+1. 导出ART分区
+dd if=/dev/mtd7 of=/tmp/art.bin
+tftp -pl /tmp/art.bin -r art.bin 192.168.8.88
+
+dd if=/dev/mtd5 of=/tmp/art.bin
+tftp -pl /tmp/art.bin -r art.bin 172.16.0.11
+
+brctl addif br-lan1 eth0.1
+
+GW42 ated:
+ated -b br-lan1 -i ra0
+
+
+rz
+
+
+2. 更新ART分区
+tftp -gl /tmp/art.bin -r art_dk04_demo.bin 192.168.100.11
+mtd write /tmp/art.bin art
+
+
+ART分区确定：
+cat /proc/mtd
+在结果中找到art分区对应在mtd
+
+
+9886:
+
+cd /lib/firmware/QCA9888/hw.2
+
+cd /ugw/scripts/boarddata/
+
+tftp -gr JRT1200G_calData_20190327_edit.bin 169.254.254.180
+
+cp JRT1200G_calData_20190327_edit.bin boarddata_1.bin
+
+cp A820_calData_20180116.bin boardData_2_0_QCA9888_5G_Y9690.bin
+
+/ugw/scripts/boarddata/boardData_2_0_QCA9888_5G_Y9690.bin 
+                       boardData_2_0_QCA9888_5G_Y9690.bin
+
+4019:
+
+cd /lib/firmware/IPQ4019/hw.1
+
+
+tftp -gr IPQ4019_2G_edit.bin 169.254.254.222
+
+tftp -gr IPQ4019_5G_LB.bin 169.254.254.180
+
+tftp -gr IPQ4019_5G_edit.bin 169.254.254.222
+
+
+tftp -gr IPQ4019_DK04_5G_edit.bin 192.168.100.11
+
+
+cp IPQ4019_2G_edit.bin boarddata_0.bin
+
+cp IPQ4019_5G_LB.bin boarddata_1.bin
+
+cp IPQ4019_5G_edit.bin boarddata_1.bin
+
+
+md5sum *
+
+ls -lht
+
+
+sz boardData_1_0_IPQ4019_DK07_wifi0_5G_HB.bin
+sz boardData_1_0_IPQ4019_DK07_wifi1_5G_LB.bin
+
+
+cd /lib/firmware/QCA9888/hw.2/
+
+tftp -gr 9886_calData_20171012_edit.bin 192.168.8.11
+
+tftp -gr A820_calData_20180116.bin 169.254.254.23
+
+cp 9886_calData_20171012_edit.bin boarddata_0.bin
+
+cp 9886_calData_20171012_edit.bin boarddata_1.bin
+
+cp 9886_calData_20171012_edit.bin boarddata_2.bin
+
+
+cp A820_calData_20180116.bin boarddata_2.bin
+
+sync
+
+
+
+I2升级固件，可在WEB页面升级，也可用于UBOOT升级，UBOOT下升级指令如下：
+setenv ipaddr 172.10.17.17
+setenv serverip 172.10.17.80
+setenv bootcmd 'bootm 0x9f050000'
+saveenv
+tftp 0x80060000 a2-DEBUG-V1.0-201708101705-sysupgrade.bin && erase 0x9f050000 +${filesize} && cp.b $fileaddr 0x9f050000 $filesize && re
+
+

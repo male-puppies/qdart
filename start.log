@@ -1,0 +1,25 @@
+
+
+uci set wireless.wifi0.disabled=0
+uci set wireless.wifi1.disabled=0
+uci commit wireless
+
+uci set network.lan.ipaddr=192.168.10.1
+uci commit network
+
+
+/etc/init.d/qcmbr start
+
+wifi down 
+rmmod wifi_3_0 
+rmmod wifi_2_0 
+rmmod qca_ol 
+insmod qca_ol testmode=1 
+insmod wifi_3_0 
+insmod wifi_2_0 
+insmod diagchar #文档有遗漏;
+diag_socket_app -a 192.168.10.115 &
+/etc/init.d/ftm start 
+ftm -n -dd & 
+
+

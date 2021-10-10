@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PanelCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="qrct4">
+  <Panel name="TX_Lithium_0">
+    <UIData name="1" value="0" />
+    <UIData name="2" value="3" />
+    <UIData name="3" value="100" />
+    <UIData name="4" value="100" />
+    <UIData name="5" value="3" />
+    <UIData name="6" value="15" />
+    <UIData name="7" value="3" />
+    <UIData name="8" value="27" />
+    <UIData name="9" value="5" />
+    <UIData name="10" value="1" />
+    <UIData name="11" value="0" />
+    <UIData name="12" value="10" />
+    <UIData name="13" value="0" />
+    <UIData name="14" value="0" />
+    <UIData name="15" value="1" />
+    <UIData name="16" value="0" />
+    <UIData name="17" value="1500" />
+    <UIData name="18" value="1" />
+    <UIData name="19" value="1" />
+    <UIData name="20" value="0" />
+    <UIData name="21" value="0" />
+    <UIData name="22" value="0" />
+    <UIData name="23" value="0" />
+    <UIData name="24" value="0" />
+    <UIData name="25" value="0" />
+    <UIData name="26" value="1" />
+    <UIData name="27" value="4" />
+    <UIData name="28" value="25" />
+    <UIData name="29" value="0" />
+    <UIData name="30" value="5" />
+    <UIData name="32" value="0" />
+    <UIData name="33" value="0" />
+    <UIData name="34" value="2" />
+    <UIData name="35" value="0" />
+    <UIData name="36" value="2" />
+    <UIData name="37" value="0" />
+  </Panel>
+</PanelCollection>
