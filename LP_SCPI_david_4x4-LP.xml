@@ -43,7 +43,7 @@
           <HWInterfaceDLL>QC.TILib.LibraryManager.dll</HWInterfaceDLL>
           <PartialClassName>TcpClient</PartialClassName>
           <ITcpClient>
-            <Host>192.168.100.254</Host>
+            <Host>192.168.10.254</Host>
             <Port>24000</Port>
           </ITcpClient>
         </HardwareInterface>
