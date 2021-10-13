@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <InstrumentConfList>
+    <FormatVersion>1</FormatVersion>
+    <Instruments>
+      <DriverDLLPath>C:\Qualcomm\WCN\ProdTests\BIN</DriverDLLPath>
+      <HWInterfaceDLLPath>C:\Qualcomm\WCN\ProdTests\BIN</HWInterfaceDLLPath>
+      <SimulationMode>No</SimulationMode>
+      <DeviceOpenTime>At Get Instrument</DeviceOpenTime>
+      
+      <!--***********************************Common SCPI WLAN**********************************-->
+      <Instrument>
+        <ResourceIDList>
+          <!--This resource ID "WLANTester" is used in the production test tree-->
+          <Item>WLANTester</Item>
+        </ResourceIDList>
+        <Model>WCNTester_CommonSCPIWLAN</Model>
+        <OptionalConfigInfoList>
+          <InfoItem Name="RFPort" Value ="left" />
+	  <InfoItem Name="MIMO_CONFIG" Value ="4x4"/>
+    <InfoItem Name="VSA_TRIGGER_LEVEL_MAX_DBM" Value="-25"/>
+    <InfoItem Name="WLAN_80P80_POWER_OFFSET_DB" Value="0"/>               
+    <InfoItem Name="DUT1_PORT1-VSA_TERMINAL_INDEX" Value="1"/>
+    <InfoItem Name="DUT1_PORT2-VSA_TERMINAL_INDEX" Value="1"/>
+    <InfoItem Name="DUT1_PORT3-VSA_TERMINAL_INDEX" Value="1"/>
+    <InfoItem Name="DUT1_PORT4-VSA_TERMINAL_INDEX" Value="1"/>
+    <InfoItem Name="DUT1_PORT1-VSG_TERMINAL_INDEX" Value="1"/>
+    <InfoItem Name="DUT1_PORT2-VSG_TERMINAL_INDEX" Value="1"/>
+    <InfoItem Name="DUT1_PORT3-VSG_TERMINAL_INDEX" Value="1"/>
+    <InfoItem Name="DUT1_PORT4-VSG_TERMINAL_INDEX" Value="1"/>
+	
+	<InfoItem Name="DUT2_PORT1-VSA_TERMINAL_INDEX" Value="5"/>
+	<InfoItem Name="DUT2_PORT2-VSA_TERMINAL_INDEX" Value="6"/>
+	<InfoItem Name="DUT2_PORT3-VSA_TERMINAL_INDEX" Value="7"/>
+	<InfoItem Name="DUT2_PORT4-VSA_TERMINAL_INDEX" Value="8"/>
+  	<InfoItem Name="DUT2_PORT1-VSG_TERMINAL_INDEX" Value="5"/>
+	<InfoItem Name="DUT2_PORT2-VSG_TERMINAL_INDEX" Value="6"/>
+	<InfoItem Name="DUT2_PORT3-VSG_TERMINAL_INDEX" Value="7"/>
+	<InfoItem Name="DUT2_PORT4-VSG_TERMINAL_INDEX" Value="8"/>
+
+        </OptionalConfigInfoList>
+        <HardwareInterface>
+          <HWInterfaceDLL>QC.TILib.LibraryManager.dll</HWInterfaceDLL>
+          <PartialClassName>TcpClient</PartialClassName>
+          <ITcpClient>
+            <Host>192.168.100.254</Host>
+            <Port>24000</Port>
+          </ITcpClient>
+        </HardwareInterface>
+        <DriverDLL>QC.TILib.WirelessConnectivity.dll</DriverDLL>
+      </Instrument>
+
+      <!--***********************************Power Supply***********************************-->
+
+      <!--***********************************Power Meter************************************-->      
+  
+    </Instruments>
+  </InstrumentConfList>  
+</root>
